@@ -38,6 +38,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="theme-color" content="#8b5cf6" />
         <meta name="msapplication-TileColor" content="#8b5cf6" />
+        <meta name="google-site-verification" content="NKidgHJX1jRjRjVroENdA0UMeRGLh2ZUa6hoZy17z90" />        
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-inter antialiased cursor-none relative`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
