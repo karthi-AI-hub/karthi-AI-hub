@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Code2, Smartphone, Server, Database, Cloud, Settings, Zap } from "lucide-react"
+import Image from "next/image"
 
 interface Skill {
   id: string
@@ -82,7 +83,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/20 dark:from-slate-800 dark:via-purple-900/20 dark:to-pink-900/10 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -197,9 +198,21 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                   {groupedSkills[category.id]?.map((skill, index) => (
                     <motion.div
                       key={skill.id}
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      initial={{ opacity: 0, scale: 0.8, y: 30 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: index * 0.1,
+                        type: "spring",
+                        stiffness: 120,
+                        damping: 15
+                      }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        y: -5,
+                        transition: { duration: 0.2 }
+                      }}
+                      whileTap={{ scale: 0.95 }}
                       whileHover={{
                         scale: 1.05,
                         y: -5,
@@ -216,8 +229,34 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
 
                         {/* Skill Content */}
                         <div className="relative z-10 flex flex-col items-center text-center">
-                          <div className={`p-4 bg-gradient-to-r ${category.color} rounded-xl shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                            <category.icon className="w-8 h-8 text-white" />
+                          <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                            {skill.icon_url ? (
+                              <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-xl p-3 flex items-center justify-center shadow-md border border-gray-200 dark:border-gray-700">
+                                <Image
+                                  src={skill.icon_url}
+                                  alt={`${skill.name} icon`}
+                                  width={40}
+                                  height={40}
+                                  className="w-10 h-10 object-contain"
+                                  onError={(e) => {
+                                    // Fallback to category icon if image fails to load
+                                    const target = e.target as HTMLImageElement;
+                                    target.style.display = 'none';
+                                    const parent = target.parentElement?.parentElement;
+                                    if (parent) {
+                                      parent.className = `w-16 h-16 bg-gradient-to-r ${category.color} rounded-xl p-3 flex items-center justify-center shadow-md`;
+                                      const fallbackIcon = document.createElement('div');
+                                      fallbackIcon.innerHTML = `<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/></svg>`;
+                                      parent.appendChild(fallbackIcon);
+                                    }
+                                  }}
+                                />
+                              </div>
+                            ) : (
+                              <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-xl p-3 flex items-center justify-center shadow-md`}>
+                                <category.icon className="w-10 h-10 text-white" />
+                              </div>
+                            )}
                           </div>
                           <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
                             {skill.name}

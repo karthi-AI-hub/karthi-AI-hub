@@ -34,7 +34,7 @@ export default function ExperienceSection({ experience }: ExperienceSectionProps
   }
 
   return (
-    <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}

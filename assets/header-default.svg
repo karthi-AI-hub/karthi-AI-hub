@@ -1,0 +1,18 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#0D1117"/>
+    <stop offset="100%" stop-color="#1E3A8A"/>
+  </linearGradient>
+  <rect width="800" height="200" fill="url(#gradient)"/>
+  
+  <text x="400" y="100" font-family="Arial" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    <tspan x="400" dy="0">Karthikeyan S</tspan>
+  </text>
+  <text x="400" y="140" font-family="Arial" font-size="24" fill="#22D3EE" text-anchor="middle">
+    <tspan x="400" dy="0">Flutter Architect | Full-Stack Engineer</tspan>
+  </text>
+  
+  <!-- Abstract shapes -->
+  <path d="M50 50 Q100 20, 150 50 T250 50" stroke="#22D3EE" stroke-width="2" fill="none"/>
+  <path d="M600 70 Q650 40, 700 70 T800 70" stroke="#22D3EE" stroke-width="2" fill="none"/>
+</svg>

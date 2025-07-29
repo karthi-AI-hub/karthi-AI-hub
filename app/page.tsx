@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+ import type { Metadata } from "next"
 import { supabase } from "@/lib/supabase"
 import { defaultMetadata, generateJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo"
 import Navbar from "@/components/navigation/navbar"
@@ -81,7 +81,7 @@ export default async function HomePage() {
       <div className="relative">
         <Navbar />
 
-        <main className="space-y-0">
+        <main className="space-y-0 relative z-10">
           <HeroSection data={data.hero} />
           <AboutSection />
           <SkillsSection skills={data.skills} />

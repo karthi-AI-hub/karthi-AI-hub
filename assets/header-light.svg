@@ -1,0 +1,18 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="200" fill="#FFFFFF"/>
+  <path d="M0 100 C150 50, 250 150, 400 100 S650 50, 800 100 L800 200 L0 200 Z" fill="#22D3EE" opacity="0.2"/>
+  <path d="M0 120 C150 70, 250 170, 400 120 S650 70, 800 120 L800 200 L0 200 Z" fill="#22D3EE" opacity="0.1"/>
+  
+  <text x="400" y="100" font-family="Arial" font-size="40" font-weight="bold" fill="#1F2937" text-anchor="middle">
+    <tspan x="400" dy="0">Karthikeyan S</tspan>
+  </text>
+  <text x="400" y="140" font-family="Arial" font-size="24" fill="#22D3EE" text-anchor="middle">
+    <tspan x="400" dy="0">Flutter Architect | Full-Stack Engineer</tspan>
+  </text>
+  
+  <!-- Subtle dots -->
+  <circle cx="100" cy="50" r="3" fill="#22D3EE"/>
+  <circle cx="700" cy="70" r="4" fill="#22D3EE"/>
+  <circle cx="300" cy="30" r="2" fill="#22D3EE"/>
+  <circle cx="500" cy="90" r="3" fill="#22D3EE"/>
+</svg>

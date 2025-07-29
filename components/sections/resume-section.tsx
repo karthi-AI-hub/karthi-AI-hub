@@ -52,7 +52,7 @@ export default function ResumeSection() {
   return (
     <section
       id="resume"
-      className="py-20 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/20 dark:from-slate-800 dark:via-purple-900/20 dark:to-pink-900/10 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -216,7 +216,7 @@ export default function ResumeSection() {
             </Card>
 
             {/* Resume Highlights */}
-            <Card className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 shadow-lg">
+            {/* <Card className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-yellow-600" />
@@ -248,7 +248,7 @@ export default function ResumeSection() {
                   </motion.div>
                 ))}
               </CardContent>
-            </Card>
+            </Card> */}
 
             {/* Contact CTA */}
             <Card className="bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-purple-600/10 backdrop-blur-xl border border-purple-500/20 shadow-lg">

@@ -5,7 +5,6 @@ import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Calendar, Sparkle
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import TypewriterEffect from "@/components/ui/typewriter-effect"
-import ParticlesBackground from "@/components/ui/particles-background"
 import Image from "next/image"
 
 interface HeroData {
@@ -35,41 +34,6 @@ export default function HeroSection({ data }: HeroSectionProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-pink-900/20" />
-
-      {/* Glassmorphism Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-purple-500/5 dark:from-slate-900/10 dark:to-purple-900/10" />
-
-      <ParticlesBackground />
-
-      {/* Floating Elements */}
-      <motion.div
-        animate={{
-          y: [-20, 20, -20],
-          rotate: [0, 5, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl"
-      />
-
-      <motion.div
-        animate={{
-          y: [20, -20, 20],
-          rotate: [0, -5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"
-      />
-
       <div className="container mx-auto px-4 z-10 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}

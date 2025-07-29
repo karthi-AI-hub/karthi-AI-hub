@@ -32,6 +32,29 @@ export default function CertificatesSection({ certificates }: CertificatesSectio
 
   const filteredCertificates = certificates.filter((cert) => selectedType === "All" || cert.type === selectedType)
 
+  // Debug: Log certificates data
+  console.log('Certificates data:', certificates);
+  console.log('Filtered certificates:', filteredCertificates);
+
+  // Convert GitHub blob URLs to raw URLs for images
+  const convertToRawUrl = (url: string) => {
+    if (!url) return url;
+    
+    // Convert GitHub blob URLs to raw URLs
+    if (url.includes('github.com') && url.includes('/blob/')) {
+      return url.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
+    }
+    
+    return url;
+  };
+
+  // Check if the certificate has an image (not PDF)
+  const isImageFile = (url: string) => {
+    if (!url) return false;
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+    return imageExtensions.some(ext => url.toLowerCase().includes(ext));
+  };
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       month: "short",
@@ -40,13 +63,13 @@ export default function CertificatesSection({ certificates }: CertificatesSectio
   }
 
   return (
-    <section id="certificates" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="certificates" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
@@ -87,23 +110,66 @@ export default function CertificatesSection({ certificates }: CertificatesSectio
               {filteredCertificates.map((certificate, index) => (
                 <motion.div
                   key={certificate.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, scale: 0.8, y: 40 }}
+                  animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 40 }}
+                  transition={{ 
+                    duration: 0.7, 
+                    delay: index * 0.15,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                  <Card className="h-full hover:shadow-2xl hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 group transform hover:-translate-y-2">
                     {certificate.image_url && (
                       <div className="relative overflow-hidden rounded-t-lg">
-                        <Image
-                          src={
-                            certificate.image_url ||
-                            `/placeholder.svg?height=200&width=400&query=${certificate.title || "/placeholder.svg"} certificate`
-                          }
-                          alt={certificate.title}
-                          width={400}
-                          height={200}
-                          className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
+                        {isImageFile(certificate.image_url) ? (
+                          <Image
+                            src={convertToRawUrl(certificate.image_url)}
+                            alt={certificate.title}
+                            width={400}
+                            height={200}
+                            className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                            onError={(e) => {
+                              console.error('Certificate image failed to load:', certificate.image_url);
+                              console.error('Converted URL:', convertToRawUrl(certificate.image_url));
+                              console.error('Certificate details:', certificate);
+                              // Fallback to certificate icon if image fails
+                              const target = e.target as HTMLImageElement;
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="w-full h-32 flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20">
+                                    <div class="text-center">
+                                      <svg class="w-12 h-12 text-purple-600 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/>
+                                      </svg>
+                                      <p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Certificate</p>
+                                      <p class="text-xs text-red-500 mt-1">Image failed to load</p>
+                                    </div>
+                                  </div>
+                                `;
+                              }
+                            }}
+                            onLoad={() => {
+                              console.log('Certificate image loaded successfully:', convertToRawUrl(certificate.image_url));
+                            }}
+                          />
+                        ) : (
+                          // Show PDF preview for PDF files
+                          <div className="w-full h-32 flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20">
+                            <div className="text-center">
+                              <svg className="w-12 h-12 text-purple-600 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                              </svg>
+                              <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">PDF Certificate</p>
+                            </div>
+                            <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
+                              PDF
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -131,11 +197,16 @@ export default function CertificatesSection({ certificates }: CertificatesSectio
                           <span>{formatDate(certificate.issue_date)}</span>
                         </div>
 
-                        {certificate.credential_url && (
+                        {(certificate.credential_url || certificate.image_url) && (
                           <Button size="sm" variant="outline" asChild>
-                            <a href={certificate.credential_url} target="_blank" rel="noopener noreferrer">
+                            <a 
+                              href={certificate.credential_url || certificate.image_url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:bg-purple-50 dark:hover:bg-purple-900/20"
+                            >
                               <ExternalLink className="w-4 h-4 mr-1" />
-                              View
+                              View Certificate
                             </a>
                           </Button>
                         )}

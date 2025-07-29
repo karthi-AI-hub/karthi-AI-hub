@@ -35,7 +35,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-white dark:bg-slate-800">
+    <section id="testimonials" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}

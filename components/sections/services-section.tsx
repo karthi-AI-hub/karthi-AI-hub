@@ -7,6 +7,7 @@ import { Smartphone, Globe, Server, Cloud, Palette, Users, ArrowRight, Check, Sp
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface Service {
   id: string
@@ -64,7 +65,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-purple-900/20 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -99,13 +100,13 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             className="inline-block mb-4"
           >
             <span className="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-full text-purple-600 dark:text-purple-400 text-sm font-medium">
@@ -138,11 +139,17 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 60, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.8 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100
+                }}
                 whileHover={{
-                  y: -10,
+                  y: -12,
+                  scale: 1.02,
                   transition: { duration: 0.3 },
                 }}
                 className="group h-full"
@@ -184,9 +191,35 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                         rotate: [0, -5, 5, 0],
                         transition: { duration: 0.5 },
                       }}
-                      className={`mx-auto mb-4 p-4 bg-gradient-to-r ${serviceConfig.gradient} rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                      className="mx-auto mb-4 w-16 h-16 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300"
                     >
-                      <serviceConfig.icon className="w-8 h-8 text-white" />
+                      {service.icon_url ? (
+                        <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl p-3 flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-700">
+                          <Image
+                            src={service.icon_url}
+                            alt={`${service.title} icon`}
+                            width={40}
+                            height={40}
+                            className="w-10 h-10 object-contain"
+                            onError={(e) => {
+                              // Fallback to service icon if image fails to load
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement?.parentElement;
+                              if (parent) {
+                                parent.className = `w-16 h-16 bg-gradient-to-r ${serviceConfig.gradient} rounded-2xl p-3 flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-700`;
+                                const fallbackIcon = document.createElement('div');
+                                fallbackIcon.innerHTML = `<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/></svg>`;
+                                parent.appendChild(fallbackIcon);
+                              }
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className={`w-16 h-16 bg-gradient-to-r ${serviceConfig.gradient} rounded-2xl p-3 flex items-center justify-center shadow-lg`}>
+                          <serviceConfig.icon className="w-10 h-10 text-white" />
+                        </div>
+                      )}
                     </motion.div>
 
                     <CardTitle className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">

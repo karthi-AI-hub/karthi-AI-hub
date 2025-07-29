@@ -52,7 +52,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-purple-900/20 relative overflow-hidden"
+      className="py-20 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -87,13 +87,13 @@ export default function AboutSection() {
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             className="inline-block mb-4"
           >
             <span className="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-full text-purple-600 dark:text-purple-400 text-sm font-medium">
@@ -122,9 +122,16 @@ export default function AboutSection() {
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 60, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.8 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
               <div className="relative h-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-3xl border border-white/20 dark:border-slate-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
@@ -194,9 +201,15 @@ export default function AboutSection() {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: item.side === "left" ? -50 : 50 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: item.side === "left" ? -50 : 50 }}
-                    transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
+                    initial={{ opacity: 0, x: item.side === "left" ? -80 : 80, scale: 0.9 }}
+                    animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: item.side === "left" ? -80 : 80, scale: 0.9 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: 0.8 + index * 0.25,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    whileHover={{ scale: 1.05 }}
                     className={`flex items-center ${item.side === "left" ? "flex-row-reverse" : ""}`}
                   >
                     <div className={`flex-1 ${item.side === "left" ? "text-right pr-8" : "pl-8"}`}>

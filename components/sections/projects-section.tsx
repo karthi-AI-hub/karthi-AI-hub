@@ -32,7 +32,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -52,11 +52,19 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 60, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.8 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300 group">
+              <Card className="h-full hover:shadow-2xl hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-500 group transform hover:-translate-y-2">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <Image
                     src={
