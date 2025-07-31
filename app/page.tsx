@@ -1,4 +1,4 @@
- import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { supabase } from "@/lib/supabase"
 import { defaultMetadata, generateJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo"
 import Navbar from "@/components/navigation/navbar"
@@ -66,8 +66,8 @@ export default async function HomePage() {
   const resumeJsonLd = generateJsonLd("resume")
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-    { name: "Home", url: "https://karthi-nexgen.vercel.app" },
-    { name: "Portfolio", url: "https://karthi-nexgen.vercel.app#portfolio" },
+    { name: "Home", url: "https://karthi-nexgen.tech" },
+    { name: "Portfolio", url: "https://karthi-nexgen.tech#portfolio" },
   ])
 
   return (

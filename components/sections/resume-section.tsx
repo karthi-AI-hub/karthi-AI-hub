@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
+import Link from "next/link"
 import { Download, Eye, ZoomIn, ZoomOut, FileText, Star, Award, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,7 +13,6 @@ export default function ResumeSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [zoom, setZoom] = useState(100)
-  const [isFullscreen, setIsFullscreen] = useState(false)
   const [resumeExists, setResumeExists] = useState(false)
 
   // Check if resume exists on component mount
@@ -138,13 +138,10 @@ export default function ResumeSection() {
                     >
                       <ZoomIn className="w-4 h-4" />
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setIsFullscreen(!isFullscreen)}
-                      data-cursor="pointer"
-                    >
-                      <Eye className="w-4 h-4" />
+                    <Button asChild variant="outline" size="sm" data-cursor="pointer">
+                      <Link href="/resume">
+                        <Eye className="w-4 h-4" />
+                      </Link>
                     </Button>
                   </div>
                 </div>

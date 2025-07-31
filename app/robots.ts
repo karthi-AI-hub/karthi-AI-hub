@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: "https://karthi-nexgen.vercel.app/sitemap.xml",
-    host: "https://karthi-nexgen.vercel.app",
+    sitemap: "https://karthi-nexgen.tech/sitemap.xml",
+    host: "https://karthi-nexgen.tech",
   }
 }

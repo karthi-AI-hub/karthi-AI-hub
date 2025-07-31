@@ -49,9 +49,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const projectJsonLd = generateJsonLd("project", project)
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-    { name: "Home", url: "https://karthi-nexgen.vercel.app" },
-    { name: "Projects", url: "https://karthi-nexgen.vercel.app/projects" },
-    { name: project.title, url: `https://karthi-nexgen.vercel.app/projects/${project.slug}` },
+    { name: "Home", url: "https://karthi-nexgen.tech" },
+    { name: "Projects", url: "https://karthi-nexgen.tech/projects" },
+    { name: project.title, url: `https://karthi-nexgen.tech/projects/${project.slug}` },
   ])
 
   return (

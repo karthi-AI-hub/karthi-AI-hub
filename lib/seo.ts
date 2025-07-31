@@ -1,27 +1,28 @@
 import type { Metadata } from "next"
 
 export const defaultMetadata: Metadata = {
-  title: "Karthi–NexGen | Premium Full-Stack Mobile & Cloud Developer",
+  title: "Karthi-NexGen | Expert Full-Stack, Mobile & Cloud Developer",
   description:
-    "Award-winning Freelance Full-Stack, Mobile & Cloud Developer specializing in Flutter, React, Node.js. Premium development services for Healthcare, Enterprise, EdTech & SaaS projects. Based in Tamil Nadu, India.",
+    "Partner with Karthi, an expert freelance developer delivering high-performance web and mobile apps with Flutter, React, and Node.js. Based in India. Let's build your next big idea.",
   keywords: [
     "Karthi-NexGen",
-    "Premium Flutter Developer India",
-    "Expert Android Developer for Hire",
-    "Cross-platform App Developer Tamil Nadu",
-    "Supabase Full-stack Developer Portfolio",
-    "React Native Developer",
-    "Node.js Backend Developer",
-    "Healthcare App Developer",
-    "Enterprise Software Developer",
-    "Karthikeyan S Developer",
-    "SaaS Developer India",
-    "Cloud Solutions Architect",
-    "API Development Expert",
-    "Mobile App Development Services",
-    "Full-Stack Development Freelancer",
+    "Freelance Developer India",
+    "Full-Stack Developer",
+    "Mobile App Developer",
+    "Cloud Solutions Expert",
+    "Flutter Developer",
+    "React Developer",
+    "Node.js Developer",
+    "Next.js Developer",
+    "Supabase Expert",
+    "Enterprise App Development",
+    "SaaS Product Development",
+    "Hire Freelance Developer",
+    "Karthikeyan S Portfolio",
+    "Top-rated Developer India",
   ],
-  authors: [{ name: "Karthikeyan S", url: "https://karthi-nexgen.vercel.app" }],
+
+  authors: [{ name: "Karthikeyan S", url: "https://karthi-nexgen.tech" }],
   creator: "Karthikeyan S",
   publisher: "Karthi–NexGen",
   formatDetection: {
@@ -32,27 +33,27 @@ export const defaultMetadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://karthi-nexgen.vercel.app",
-    siteName: "Karthi–NexGen",
-    title: "Karthi–NexGen | Premium Full-Stack Mobile & Cloud Developer",
+    url: "https://karthi-nexgen.tech",
+    siteName: "Karthi-NexGen",
+    title: "Karthi-NexGen | Expert Full-Stack, Mobile & Cloud Developer",
     description:
-      "Award-winning Freelance Full-Stack, Mobile & Cloud Developer specializing in Flutter, React, Node.js. Premium development services for Healthcare, Enterprise, EdTech & SaaS projects.",
+      "Partner with Karthi, an expert freelance developer delivering high-performance web and mobile apps with Flutter, React, and Node.js. Let's build your next big idea.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://karthi-nexgen.tech/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Karthi–NexGen - Premium Full-Stack Mobile & Cloud Developer",
+        alt: "Karthi-NexGen - Expert Full-Stack, Mobile & Cloud Developer",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Karthi–NexGen | Premium Full-Stack Mobile & Cloud Developer",
+    title: "Karthi-NexGen | Expert Full-Stack, Mobile & Cloud Developer",
     description:
-      "Award-winning Freelance Full-Stack, Mobile & Cloud Developer specializing in Flutter, React, Node.js.",
-    images: ["/og-image.png"],
+      "Partner with Karthi, an expert freelance developer delivering high-performance web and mobile apps with Flutter, React, and Node.js.",
+    images: ["https://karthi-nexgen.tech/og-image.png"],
     creator: "@karthi_nexgen",
   },
   robots: {
@@ -69,12 +70,10 @@ export const defaultMetadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: "NKidgHJX1jRjRjVroENdA0UMeRGLh2ZUa6hoZy17z90",
   },
   alternates: {
-    canonical: "https://karthi-nexgen.vercel.app",
+    canonical: "https://karthi-nexgen.tech",
   },
 }
 
@@ -104,7 +103,7 @@ export const generateProjectMetadata = (project: {
     openGraph: {
       title: `${project.title} | Karthi–NexGen Portfolio`,
       description: project.description,
-      url: `https://karthi-nexgen.vercel.app/projects/${project.slug}`,
+      url: `https://karthi-nexgen.tech/projects/${project.slug}`,
       type: "article",
       publishedTime: project.project_date,
       authors: ["Karthikeyan S"],
@@ -127,12 +126,12 @@ export const generateProjectMetadata = (project: {
       images: project.image_url ? [project.image_url] : [],
     },
     alternates: {
-      canonical: `https://karthi-nexgen.vercel.app/projects/${project.slug}`,
+      canonical: `https://karthi-nexgen.tech/projects/${project.slug}`,
     },
   }
 }
 
-export const generatePageMetadata = (page: "about" | "skills" | "services" | "contact" | "projects"): Metadata => {
+export const generatePageMetadata = (page: "about" | "skills" | "services" | "contact" | "projects" | "resume"): Metadata => {
   const pageData = {
     about: {
       title: "About Karthikeyan S | Karthi–NexGen - Premium Developer Story",
@@ -159,6 +158,10 @@ export const generatePageMetadata = (page: "about" | "skills" | "services" | "co
       description:
         "Explore premium development projects by Karthikeyan S across Healthcare, Enterprise, and SaaS sectors. Full-stack, mobile, and cloud solutions showcase.",
     },
+    resume: {
+      title: "Resume | Karthi-NexGen - Full-Stack Developer",
+      description: "View and download the official resume of Karthi, an expert Full-Stack, Mobile, and Cloud Developer.",
+    },
   }
 
   const data = pageData[page]
@@ -169,20 +172,20 @@ export const generatePageMetadata = (page: "about" | "skills" | "services" | "co
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `https://karthi-nexgen.vercel.app/${page === "about" ? "#about" : page}`,
+      url: `https://karthi-nexgen.tech/${page === "about" ? "#about" : page}`,
     },
     twitter: {
       title: data.title,
       description: data.description,
     },
     alternates: {
-      canonical: `https://karthi-nexgen.vercel.app/${page === "about" ? "#about" : page}`,
+      canonical: `https://karthi-nexgen.tech/${page === "about" ? "#about" : page}`,
     },
   }
 }
 
 export const generateJsonLd = (type: "person" | "portfolio" | "project" | "resume", data?: any) => {
-  const baseUrl = "https://karthi-nexgen.vercel.app"
+  const baseUrl = "https://karthi-nexgen.tech"
 
   switch (type) {
     case "person":
@@ -366,13 +369,13 @@ export const generateOrganizationJsonLd = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://karthi-nexgen.vercel.app/#organization",
+    "@id": "https://karthi-nexgen.tech/#organization",
     name: "Karthi–NexGen",
     alternateName: "Karthi NexGen",
-    url: "https://karthi-nexgen.vercel.app",
+    url: "https://karthi-nexgen.tech",
     logo: {
       "@type": "ImageObject",
-      url: "https://karthi-nexgen.vercel.app/logo.png",
+      url: "https://karthi-nexgen.tech/logo.png",
       width: 200,
       height: 200,
     },

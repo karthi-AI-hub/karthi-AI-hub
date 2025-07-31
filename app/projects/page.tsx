@@ -26,8 +26,8 @@ export default async function ProjectsPage() {
   const projects = await getProjects()
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-    { name: "Home", url: "https://karthi-nexgen.vercel.app" },
-    { name: "Projects", url: "https://karthi-nexgen.vercel.app/projects" },
+    { name: "Home", url: "https://karthi-nexgen.tech" },
+    { name: "Projects", url: "https://karthi-nexgen.tech/projects" },
   ])
 
   const portfolioJsonLd = generateJsonLd("portfolio")
