@@ -45,7 +45,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-inter antialiased cursor-none relative`}>
         <FirebaseAnalytics />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           {/* Global Background */}
           <div className="fixed inset-0 -z-10">
             {/* Main Gradient Background */}
