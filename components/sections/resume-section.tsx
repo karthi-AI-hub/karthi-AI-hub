@@ -18,7 +18,7 @@ export default function ResumeSection() {
   // Check if resume exists on component mount
   useEffect(() => {
     fetch("/resume.pdf", { method: 'HEAD' })
-      .then(response => {
+      .then(response => { 
         setResumeExists(response.ok)
       })
       .catch(() => {

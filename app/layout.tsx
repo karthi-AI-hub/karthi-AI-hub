@@ -8,6 +8,7 @@ import MinimalCursor from "@/components/ui/advanced-cursor"
 import GlobalParticlesBackground from "@/components/ui/global-particles-background"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { FirebaseAnalytics } from "@/components/firebase-analytics"
 import "./globals.css"
 
 const inter = Inter({
@@ -43,6 +44,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="NKidgHJX1jRjRjVroENdA0UMeRGLh2ZUa6hoZy17z90" />        
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-inter antialiased cursor-none relative`}>
+        <FirebaseAnalytics />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
           {/* Global Background */}
           <div className="fixed inset-0 -z-10">
