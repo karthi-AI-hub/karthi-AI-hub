@@ -226,7 +226,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                       {service.title}
                     </CardTitle>
 
-                    {service.price_range && (
+                    {/* {service.price_range && (
                       <motion.div whileHover={{ scale: 1.05 }} className="mx-auto">
                         <Badge
                           variant="outline"
@@ -235,7 +235,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                           {service.price_range}
                         </Badge>
                       </motion.div>
-                    )}
+                    )} */}
                   </CardHeader>
 
                   <CardContent className="text-center relative z-10">

@@ -1,0 +1,108 @@
+# Robots.txt for Karthi-NexGen - Flutter Developer, React Expert, Mobile App Developer
+# https://karthi-nexgen.tech
+
+User-agent: *
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.pdf
+Allow: /*.json
+Allow: /*.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /temp/
+Disallow: /tmp/
+
+# Special rules for major search engines
+User-agent: Googlebot
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+
+User-agent: Twitterbot
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /projects
+Allow: /projects/*
+Allow: /resume
+
+# Site Maps
+Sitemap: https://karthi-nexgen.tech/sitemap.xml
+Sitemap: https://karthi-nexgen.tech/image-sitemap.xml
+
+# Host directive
+Host: https://karthi-nexgen.tech
+
+# Additional crawling hints
+# Profile and portfolio images - explicitly allowed for search indexing
+Allow: /me1.jpg
+Allow: /me2.jpg
+Allow: /android-chrome-512x512.png
+Allow: /android-chrome-192x192.png
+Allow: /resume.pdf
+Allow: /favicon.ico
+Allow: /android-chrome-*.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+# Project screenshots and portfolio images
+Allow: /projects/*
+Allow: /images/*
+Allow: /assets/*
+Allow: /screenshots/*

@@ -102,7 +102,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
-                    <p className="text-slate-600 dark:text-slate-300">karthikeyan@karthi-nexgen.com</p>
+                    <p className="text-slate-600 dark:text-slate-300">me@karthi-nexgen.tech</p>
                   </div>
                 </div>
 
@@ -112,7 +112,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white">Phone</h3>
-                    <p className="text-slate-600 dark:text-slate-300">+91 9876543210</p>
+                    <p className="text-slate-600 dark:text-slate-300">+91 9688976383
+                    </p>
                   </div>
                 </div>
 
@@ -136,9 +137,9 @@ export default function ContactSection() {
                     <Button variant="outline" size="icon">
                       <Linkedin className="w-5 h-5" />
                     </Button>
-                    <Button variant="outline" size="icon">
+                    {/* <Button variant="outline" size="icon">
                       <Twitter className="w-5 h-5" />
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
 

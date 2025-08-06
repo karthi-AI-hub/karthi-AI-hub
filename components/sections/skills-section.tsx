@@ -155,7 +155,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
             {/* Enhanced Tab List */}
             <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-6 gap-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-2 rounded-2xl border border-white/20 dark:border-slate-700/50">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent p-2 rounded-2xl border-0">
                 {skillCategories.map((category, index) => (
                   <motion.div
                     key={category.id}

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import TypewriterEffect from "@/components/ui/typewriter-effect"
 import Image from "next/image"
+import Link from "next/link"
 
 interface HeroData {
   name: string
@@ -22,9 +23,9 @@ interface HeroSectionProps {
 export default function HeroSection({ data }: HeroSectionProps) {
   const heroData = data || {
     name: "Karthikeyan S",
-    tagline: "Full-Stack • Mobile • Cloud Developer",
-    subtitle: "Freelance Developer specializing in Flutter, React, Node.js & Cloud Solutions",
-    cta_text: "Let's Build Something Together",
+    tagline: "NexGen Flutter Developer • React Expert • Mobile App Specialist",
+    subtitle: "Expert freelance developer specializing in Flutter mobile apps, React web development, Node.js backends, and modern cloud solutions. Transforming ideas into powerful digital experiences.",
+    cta_text: "Let's Build Something Amazing",
     cta_link: "#contact",
   }
 
@@ -33,7 +34,23 @@ export default function HeroSection({ data }: HeroSectionProps) {
   }
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      itemScope 
+      itemType="https://schema.org/Person"
+    >
+      {/* Hidden structured data for SEO */}
+      <div className="sr-only">
+        <h1 itemProp="name">Karthikeyan S - NexGen Flutter Developer</h1>
+        <span itemProp="jobTitle">Flutter Developer, React Expert, Mobile App Developer</span>
+        <span itemProp="description">Expert freelance developer specializing in Flutter mobile apps, React web development, Node.js backends, Express.js APIs, Next.js, Supabase, Firebase</span>
+        <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+          <span itemProp="addressRegion">Tamil Nadu</span>,
+          <span itemProp="addressCountry">India</span>
+        </span>
+        <span itemProp="knowsAbout">Flutter Development, React Development, Node.js Development, Mobile App Development, Android Development, Web Development, Full-Stack Development, Express.js, Next.js, Supabase, Firebase</span>
+      </div>
       <div className="container mx-auto px-4 z-10 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -50,13 +67,13 @@ export default function HeroSection({ data }: HeroSectionProps) {
               transition={{ delay: 0.2 }}
               className="mb-6"
             >
-              <Badge className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-600 dark:text-green-400 border-green-500/30 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+              <Badge className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-green-500/30 px-4 py-2 text-sm font-medium backdrop-blur-sm">
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                  className="w-2 h-2 bg-green-500 rounded-full mr-2"
+                  className="w-2 h-2 bg-white rounded-full mr-2"
                 />
-                Available for Freelance Projects
+                Available for Flutter & React Projects
               </Badge>
             </motion.div>
 
@@ -75,7 +92,16 @@ export default function HeroSection({ data }: HeroSectionProps) {
             {/* Tagline with Typewriter Effect */}
             <div className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 h-16">
               <TypewriterEffect
-                words={[heroData.tagline, "Flutter Expert", "React Specialist", "Cloud Architect", "API Developer"]}
+                words={[
+                  heroData.tagline,
+                  "Flutter & React Expert",
+                  "Mobile App Developer",
+                  "Full-Stack Developer",
+                  "UI/UX Specialist",
+                  "API Integration Expert",
+                  "Cloud Solutions Developer",
+                  "Supabase & Firebase Expert"
+                ]}
                 className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent"
               />
             </div>
@@ -103,11 +129,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
               </div>
               <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
                 <Calendar className="w-4 h-4" />
-                <span>3+ Years Experience</span>
+                <span>3+ Years Flutter & React</span>
               </div>
               <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
                 <Sparkles className="w-4 h-4" />
-                <span>20+ Projects Delivered</span>
+                <span>20+ Mobile & Web Apps</span>
               </div>
             </motion.div>
 
@@ -130,14 +156,16 @@ export default function HeroSection({ data }: HeroSectionProps) {
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-purple-300 dark:border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm transition-all duration-300"
-                >
-                  <Download className="mr-2 w-5 h-5" />
-                  Download Resume
-                </Button>
+                <Link href="/resume">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-purple-300 dark:border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm transition-all duration-300"
+                  >
+                    <Download className="mr-2 w-5 h-5" />
+                    View Resume
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -148,21 +176,26 @@ export default function HeroSection({ data }: HeroSectionProps) {
               transition={{ delay: 0.8 }}
               className="flex items-center justify-center lg:justify-start gap-4"
             >
-              {[
-                { icon: Github, href: "#", color: "hover:text-gray-900 dark:hover:text-white" },
-                { icon: Linkedin, href: "#", color: "hover:text-blue-600" },
-                { icon: Mail, href: "#", color: "hover:text-red-500" },
-              ].map((social, index) => (
-                <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className={`w-12 h-12 rounded-2xl bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </Button>
-                </motion.div>
-              ))}
+              { [
+                { icon: Github, href: "https://github.com/karthi-AI-hub", color: "hover:text-gray-900 dark:hover:text-white" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/k4rthi/", color: "hover:text-blue-600" },
+                { icon: Mail, href: "mailto:me@karthi-nexgen.tech", color: "hover:text-red-500" },
+              ].map((social, index) => {
+                const isMail = social.href.startsWith("mailto:")
+                return (
+                  <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
+                    <Link href={social.href} target={isMail ? "_self" : "_blank"} rel={isMail ? "" : "noopener noreferrer"}>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className={`w-12 h-12 rounded-2xl bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 text-slate-600 dark:text-slate-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                      >
+                        <social.icon className="w-5 h-5" />
+                      </Button>
+                    </Link>
+                  </motion.div>
+                )
+              })}
             </motion.div>
           </motion.div>
 
@@ -197,8 +230,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 {/* Profile Image */}
                 <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50">
                   <Image
-                    src="/me1.jpg"
-                    alt="Karthikeyan S - Full-Stack Developer"
+                    src="/android-chrome-512x512.png"
+                    alt="Karthikeyan S - NexGen Flutter Developer, React Expert, Mobile App Developer, Freelancer"
                     width={300}
                     height={300}
                     className="w-full h-full object-cover"
@@ -208,11 +241,11 @@ export default function HeroSection({ data }: HeroSectionProps) {
 
                 {/* Floating Tech Icons */}
                 {[
-                  { icon: "⚛️", position: "top-0 right-8", delay: 0 },
-                  { icon: "📱", position: "right-0 top-16", delay: 1 },
-                  { icon: "☁️", position: "bottom-0 right-8", delay: 2 },
-                  { icon: "🚀", position: "left-0 bottom-16", delay: 3 },
-                  { icon: "💻", position: "top-0 left-8", delay: 4 },
+                  { icon: "📱", position: "top-0 right-8", delay: 0, label: "Flutter" },
+                  { icon: "⚛️", position: "right-0 top-16", delay: 1, label: "React" },
+                  { icon: "🚀", position: "bottom-0 right-8", delay: 2, label: "Node.js" },
+                  { icon: "⚡", position: "left-0 bottom-16", delay: 3, label: "Firebase" },
+                  { icon: "💻", position: "top-0 left-8", delay: 4, label: "Next.js" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

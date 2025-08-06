@@ -4,7 +4,8 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -16,6 +17,7 @@ const navItems = [
 ]
 
 export default function Navbar() {
+  const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
@@ -64,7 +66,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/50 shadow-2xl"
+            ? "bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50 shadow-2xl"
             : "bg-transparent"
         }`}
       >
@@ -75,12 +77,18 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-3 cursor-pointer group"
-              onClick={() => scrollToSection("#hero")}
+              onClick={() => router.push("/")}
               data-cursor="pointer"
             >
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
-                  <span className="text-white font-bold text-lg">K</span>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
+                  <Image
+                    src="/android-chrome-512x512.png"
+                    alt="Karthi NexGen Logo"
+                    width={48}
+                    height={48}
+                    className="rounded-xl"
+                  />
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -89,12 +97,12 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-xl bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                  Karthi–NexGen
+                <span className="font-bold text-xl bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  Karthi NexGen
                 </span>
-                <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                <div className="flex items-center gap-1 text-xs text-slate-400">
                   <Sparkles className="w-3 h-3" />
-                  <span>Full-Stack Developer</span>
+                  <span>Expert Flutter & React Developer</span>
                 </div>
               </div>
             </motion.div>
@@ -114,7 +122,7 @@ export default function Navbar() {
                   className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     activeSection === item.href.substring(1)
                       ? "text-white"
-                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                      : "text-slate-300 hover:text-white"
                   }`}
                 >
                   {activeSection === item.href.substring(1) && (
@@ -131,8 +139,6 @@ export default function Navbar() {
 
             {/* Right Side */}
             <div className="flex items-center space-x-3">
-              <ThemeToggle />
-
               {/* CTA Button */}
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden sm:block">
                 <Button
@@ -154,7 +160,7 @@ export default function Navbar() {
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 data-cursor="pointer"
-                className="lg:hidden w-10 h-10 bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-300"
+                className="lg:hidden w-10 h-10 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:bg-slate-700/50 transition-all duration-300 text-white"
               >
                 <AnimatePresence mode="wait">
                   {isMobileMenuOpen ? (
@@ -201,7 +207,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-20 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-2xl p-6 z-50 lg:hidden shadow-2xl"
+              className="fixed top-20 left-4 right-4 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 z-50 lg:hidden shadow-2xl"
             >
               <div className="space-y-4">
                 {navItems.map((item, index) => (
@@ -215,7 +221,7 @@ export default function Navbar() {
                     className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                       activeSection === item.href.substring(1)
                         ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
-                        : "text-slate-600 dark:text-slate-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-600 dark:hover:text-purple-400"
+                        : "text-slate-300 hover:bg-purple-900/30 hover:text-purple-400"
                     }`}
                   >
                     {item.name}
@@ -225,7 +231,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
-                  className="pt-4 border-t border-slate-200 dark:border-slate-700"
+                  className="pt-4 border-t border-slate-700"
                 >
                   <Button
                     onClick={() => scrollToSection("#contact")}

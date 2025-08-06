@@ -187,14 +187,14 @@ export default function AboutSection() {
                     side: "right",
                   },
                   {
-                    year: "2022 - 2023",
+                    year: "2025 - Present",
                     title: "Flutter Developer at Pep Softwares",
                     description: "Led mobile app development team and delivered multiple production apps",
                     side: "left",
                   },
                   {
-                    year: "2018 - 2022",
-                    title: "Computer Science Graduate",
+                    year: "2022 - 2026",
+                    title: "Artificial Intelligence & Data Science Student",
                     description: "B.Tech with 8.5 CGPA, specialized in software engineering",
                     side: "right",
                   },

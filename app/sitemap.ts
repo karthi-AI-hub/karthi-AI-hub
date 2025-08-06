@@ -18,25 +18,58 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: project.featured ? 0.9 : 0.8,
     })) || []
 
-  // Static pages with priorities
+  // Static pages with SEO-optimized priorities
   const staticPages = [
+    // Homepage - highest priority
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "daily" as const,
       priority: 1.0,
     },
+    // Main portfolio sections - high priority for keyword indexing
     {
-      url: `${baseUrl}/projects`,
+      url: `${baseUrl}/#about`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/#skills`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/#services`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/#projects`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/#contact`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    // Dedicated pages
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/resume`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.85,
     },
   ]
 

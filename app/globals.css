@@ -59,13 +59,28 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  html {
-    scroll-behavior: smooth;
+  /* Ensure cursor is always visible */
+  html, body {
+    cursor: auto !important;
   }
 
-  /* Hide default cursor */
-  * {
-    cursor: none !important;
+  *, *::before, *::after {
+    cursor: inherit !important;
+  }
+
+  /* Restore pointer cursor for interactive elements */
+  button, a, input, select, textarea, [role="button"], [tabindex]:not([tabindex="-1"]), 
+  .cursor-pointer, [onclick] {
+    cursor: pointer !important;
+  }
+
+  /* Text cursor for text inputs */
+  input[type="text"], input[type="email"], input[type="password"], input[type="search"], textarea {
+    cursor: text !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   /* Custom scrollbar */
@@ -362,4 +377,31 @@
 @keyframes float4 {
   0%, 100% { transform: translateY(15px) rotate(0deg); }
   50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+/* FINAL OVERRIDE - Force cursor visibility with highest specificity */
+html body *, 
+html body *::before, 
+html body *::after {
+  cursor: auto !important;
+}
+
+html body button, 
+html body a, 
+html body input, 
+html body select, 
+html body textarea, 
+html body [role="button"], 
+html body [tabindex]:not([tabindex="-1"]), 
+html body .cursor-pointer,
+html body [onclick] {
+  cursor: pointer !important;
+}
+
+html body input[type="text"], 
+html body input[type="email"], 
+html body input[type="password"], 
+html body input[type="search"], 
+html body textarea {
+  cursor: text !important;
 }
