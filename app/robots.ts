@@ -18,6 +18,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/admin/", "/api/"],
       },
+      {
+        userAgent: "Googlebot-Image",
+        allow: [
+          "/favicon.ico",
+          "/android-chrome-192x192.png", 
+          "/android-chrome-512x512.png",
+          "/apple-touch-icon.png"
+        ],
+      },
     ],
     sitemap: "https://karthi-nexgen.tech/sitemap.xml",
     host: "https://karthi-nexgen.tech",
