@@ -41,7 +41,7 @@ export default function RootLayout({
     "@id": "https://karthi-nexgen.tech/#website",
     url: "https://karthi-nexgen.tech",
     name: "Karthi NexGen - Expert Developer & Freelancer | Flutter Developer | Mobile Developer",
-    description: "NexGen's expert developer and freelancer. Professional Flutter developer, mobile developer, React specialist. Top-rated freelancer delivering premium mobile app development, Android development, web development, and full-stack solutions.",
+    description: "Expert developer and freelancer. Professional Flutter developer, mobile developer, React specialist. Top-rated freelancer delivering premium mobile app development, Android development, web development, and full-stack solutions.",
     inLanguage: "en-US",
     potentialAction: {
       "@type": "SearchAction",
@@ -56,7 +56,7 @@ export default function RootLayout({
       name: "Karthikeyan S",
       "@id": "https://karthi-nexgen.tech/#person"
     },
-    keywords: "Karthi, NexGen, Karthi NexGen, Karthi-NexGen, Developer, Freelancer, Tamil Nadu Developer, Tamil Nadu Freelancer, Best Developer, Best Developer Tamil Nadu, Mobile Developer, Flutter Developer, Flutter Developer Tamil Nadu, Mobile Developer Tamil Nadu, Android Developer, React Developer, Full-Stack Developer, Web Developer, App Developer, Best Flutter Developer, Expert Flutter Developer, Professional Flutter Developer, Tamil Nadu Software Developer, Best Developer in Tamil Nadu, Top Developer Tamil Nadu, Expert Developer Tamil Nadu, Professional Developer Tamil Nadu, Tamil Nadu Mobile App Developer, Tamil Nadu Web Developer"
+    keywords: "Karthikeyan S, Karthi-NexGen, AI ML Engineer, Full Stack Developer, Flutter Developer, React Developer, Python Developer, Computer Science Engineering, Artificial Intelligence Data Science, Machine Learning, B.Tech AI, Mobile App Development, Web Development, Tamil Nadu Developer, Professional Developer, Software Engineer"
   }
 
   // Professional Service structured data
@@ -64,14 +64,14 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://karthi-nexgen.tech/#service",
-    name: "Karthi NexGen Development Services - Expert Developer & Freelancer",
-    description: "Professional freelance development services by NexGen's expert developer. Professional Flutter mobile app development, React web development, Android app development, and full-stack solutions. Top-rated freelancer for hire.",
+    name: "Karthikeyan S - AI/ML & Full-Stack Development Services",
+    description: "Professional development services by Karthikeyan S - AI/ML Engineering student specializing in Flutter mobile development, React web applications, Python programming, and modern full-stack solutions.",
     url: "https://karthi-nexgen.tech",
-    telephone: "+91-XXX-XXX-XXXX",
+    telephone: "+91-968-897-6383",
     email: "me@karthi-nexgen.tech",
     provider: {
       "@type": "Person",
-      name: "Karthikeyan S (Karthi)",
+      name: "Karthikeyan S",
       "@id": "https://karthi-nexgen.tech/#person"
     },
     areaServed: [
@@ -89,15 +89,20 @@ export default function RootLayout({
       }
     ],
     serviceType: [
-      "Expert Developer Services",
+      "AI/ML Solutions Development",
       "Flutter Mobile App Development", 
       "React Web Development",
+      "Python Programming",
+      "Full-Stack Development",
       "Android App Development",
       "Mobile Developer Services",
       "Node.js Backend Development",
+      "Database Development",
+      "API Development",
+      "Technical Consulting",
       "Express.js API Development",
       "Next.js Web Applications",
-      "Full-Stack Development",
+      "Full-Stack API Development",
       "Mobile App Development",
       "Web Application Development",
       "Cloud Solutions Development",
@@ -159,25 +164,25 @@ export default function RootLayout({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Flutter Developer",
-        item: "https://karthi-nexgen.tech/#skills"
+        name: "AI/ML Engineering",
+        item: "https://karthi-nexgen.tech/#about"
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "React Developer",
+        name: "Full-Stack Development",
         item: "https://karthi-nexgen.tech/#skills"
       },
       {
         "@type": "ListItem",
         position: 4,
-        name: "Mobile App Development",
+        name: "Flutter & React Development",
         item: "https://karthi-nexgen.tech/#services"
       },
       {
         "@type": "ListItem",
         position: 5,
-        name: "Portfolio Projects",
+        name: "Projects",
         item: "https://karthi-nexgen.tech/projects"
       }
     ]
@@ -195,11 +200,11 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
         
         {/* Enhanced meta tags for better keyword targeting */}
-        <meta name="keywords" content="Karthi, NexGen, Karthi NexGen, Karthi-NexGen, Developer, Freelancer, Tamil Nadu Developer, Tamil Nadu Freelancer, TamilNadu Developer, TamilNadu Freelancer, Best Developer, Best Developer Tamil Nadu, Best Freelancer Tamil Nadu, Mobile Developer, Flutter Developer, Flutter Developer Tamil Nadu, Mobile Developer Tamil Nadu, Karthi Developer, Karthi Freelancer, Karthi Flutter Developer, Karthi Mobile Developer, NexGen Developer, NexGen Freelancer, Best Flutter Developer, Expert Flutter Developer, Professional Flutter Developer, Android Developer, React Developer, Node.js Developer, Express.js Developer, Next.js Developer, Full-Stack Developer, Web Developer, App Developer, Mobile App Developer, Cross-Platform Developer, Hybrid App Developer, PWA Developer, API Developer, Database Developer, Cloud Developer, UI/UX Developer, Tamil Nadu Software Developer, Tamil Nadu Mobile App Developer, Tamil Nadu Web Developer, Best Developer in Tamil Nadu, Top Developer Tamil Nadu, Expert Developer Tamil Nadu, Professional Developer Tamil Nadu, Skilled Developer Tamil Nadu, Experienced Developer Tamil Nadu, Top Freelancer Tamil Nadu, Expert Freelancer Tamil Nadu, Professional Freelancer Tamil Nadu, Hire Flutter Developer Tamil Nadu, Hire Mobile Developer Tamil Nadu, Hire Best Developer Tamil Nadu, Hire Freelancer Tamil Nadu, Tamil Nadu Developer for Hire, Best Developer for Mobile Apps, Professional Flutter Developer for Hire, Expert Mobile App Developer Tamil Nadu, Top Rated Developer Tamil Nadu, Reliable Developer Tamil Nadu, Trusted Freelancer Tamil Nadu" />
-        <meta name="description" content="Karthi (Karthikeyan S) - NexGen's best developer and freelancer from Tamil Nadu, India. Expert Flutter developer, mobile developer, React specialist, and professional freelancer. Top-rated Tamil Nadu developer specializing in mobile app development, Android development, web development, and full-stack solutions. Hire the best developer in Tamil Nadu for premium mobile and web development services." />
-        <meta name="author" content="Karthikeyan S (Karthi NexGen)" />
-        <meta name="designer" content="Karthi NexGen" />
-        <meta name="copyright" content="Karthi NexGen" />
+        <meta name="keywords" content="Karthi, Karthikeyan S, NexGen, Karthi NexGen, Karthi-NexGen, Developer, Freelancer, Tamil Nadu Developer, Tamil Nadu Freelancer, TamilNadu Developer, TamilNadu Freelancer, Best Developer, Best Developer Tamil Nadu, Best Freelancer Tamil Nadu, Mobile Developer, Flutter Developer, Flutter Developer Tamil Nadu, Mobile Developer Tamil Nadu, Karthi Developer, Karthi Freelancer, Karthi Flutter Developer, Karthi Mobile Developer, NexGen Developer, NexGen Freelancer, Best Flutter Developer, Expert Flutter Developer, Professional Flutter Developer, Android Developer, React Developer, Node.js Developer, Express.js Developer, Next.js Developer, Full-Stack Developer, Web Developer, App Developer, Mobile App Developer, Cross-Platform Developer, Hybrid App Developer, PWA Developer, API Developer, Database Developer, Cloud Developer, UI/UX Developer, Tamil Nadu Software Developer, Tamil Nadu Mobile App Developer, Tamil Nadu Web Developer, Best Developer in Tamil Nadu, Top Developer Tamil Nadu, Expert Developer Tamil Nadu, Professional Developer Tamil Nadu, Skilled Developer Tamil Nadu, Experienced Developer Tamil Nadu, Top Freelancer Tamil Nadu, Expert Freelancer Tamil Nadu, Professional Freelancer Tamil Nadu, Hire Flutter Developer Tamil Nadu, Hire Mobile Developer Tamil Nadu, Hire Best Developer Tamil Nadu, Hire Freelancer Tamil Nadu, Tamil Nadu Developer for Hire, Best Developer for Mobile Apps, Professional Flutter Developer for Hire, Expert Mobile App Developer Tamil Nadu, Top Rated Developer Tamil Nadu, Reliable Developer Tamil Nadu, Trusted Freelancer Tamil Nadu" />
+        <meta name="description" content="Karthikeyan S - Expert developer and freelancer from Tamil Nadu, India. Expert Flutter developer, mobile developer, React specialist, and professional freelancer. Top-rated Tamil Nadu developer specializing in mobile app development, Android development, web development, and full-stack solutions. Hire the best developer in Tamil Nadu for premium mobile and web development services." />
+        <meta name="author" content="Karthikeyan S" />
+        <meta name="designer" content="Karthikeyan S" />
+        <meta name="copyright" content="Karthikeyan S" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="3 days" />
         <meta name="distribution" content="global" />
@@ -217,41 +222,41 @@ export default function RootLayout({
         <meta name="geo.a1" content="Tamil Nadu" />
         
         {/* Professional skills for better categorization */}
-        <meta name="skills" content="Flutter, React, Node.js, Express.js, Next.js, JavaScript, TypeScript, Dart, Android, iOS, Mobile Development, Web Development, Full-Stack Development, API Development, Database Development, Cloud Development, Firebase, Supabase, Git, DevOps, Tamil Nadu Development, Best Development Practices" />
-        <meta name="expertise" content="Mobile App Development, Web Application Development, Cross-Platform Development, Frontend Development, Backend Development, Full-Stack Development, API Integration, Database Design, Cloud Solutions, Tamil Nadu Development Services, Best Development Practices" />
-        <meta name="industry" content="Software Development, Mobile App Development, Web Development, Information Technology, Freelance Services, Tamil Nadu IT Services" />
-        <meta name="category" content="Technology, Software Development, Mobile Development, Web Development, Tamil Nadu Developer, Best Developer" />
-        <meta name="specialization" content="Flutter Development, Mobile App Development, React Development, Tamil Nadu Freelance Services" />
+        <meta name="skills" content="Flutter, React, Node.js, JavaScript, TypeScript, Python, Dart, AI/ML, Machine Learning, Data Science, Artificial Intelligence, Mobile Development, Web Development, Full-Stack Development, API Development, Database Development, Firebase, Supabase, Git, Computer Science Engineering, Software Development, Cross-Platform Apps, Modern Web Technologies" />
+        <meta name="expertise" content="AI/ML Engineering, Full-Stack Development, Mobile App Development, Web Application Development, Cross-Platform Development, Python Programming, Computer Science Engineering, Academic Excellence" />
+        <meta name="industry" content="Software Development, Artificial Intelligence, Data Science, Information Technology, Computer Science Engineering" />
+        <meta name="category" content="AI/ML Engineering, Software Development, Full-Stack Development, Academic Excellence" />
+        <meta name="specialization" content="AI/ML Solutions, Flutter Development, React Development, Python Programming" />
         
         {/* Professional titles and roles */}
-        <meta name="title" content="Best Developer Tamil Nadu, Flutter Developer, Mobile Developer, Freelancer" />
-        <meta name="profession" content="Software Developer, Mobile Developer, Flutter Developer, Freelancer" />
-        <meta name="role" content="Lead Developer, Senior Flutter Developer, Mobile App Architect, Full-Stack Developer" />
+        <meta name="title" content="AI/ML Engineer, Full-Stack Developer, Computer Science Engineering Student" />
+        <meta name="profession" content="AI/ML Engineer, Software Developer, Computer Science Engineer" />
+        <meta name="role" content="Full-Stack Developer, AI/ML Engineer, Engineering Student" />
         
         {/* Alternative names for better discovery */}
-        <meta name="alternate-names" content="Karthi, Karthikeyan S, Karthi NexGen, Karthi-NexGen, NexGen, K4rthi, Karthi TN, Karthi Tamil Nadu, NexGen Developer, Best Developer Tamil Nadu" />
+        <meta name="alternate-names" content="Karthikeyan S, Karthi-NexGen, Karthi, AI ML Engineer, Full Stack Developer, Computer Science Engineer" />
         
-        {/* Business and service information */}
-        <meta name="business-name" content="Karthi NexGen Development Services" />
-        <meta name="service-area" content="Tamil Nadu, India, Worldwide" />
-        <meta name="service-type" content="Mobile App Development, Web Development, Flutter Development, React Development, Freelance Development Services" />
+        {/* Academic and professional information */}
+        <meta name="education" content="B.Tech Artificial Intelligence Data Science, Computer Science Engineering, 8.5+ CGPA" />
+        <meta name="academic-status" content="Engineering Student, AI Data Science Specialization" />
+        <meta name="technical-skills" content="AI/ML, Python, Flutter, React, Full-Stack Development" />
         
         {/* Cache control for better performance */}
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000" />
         <meta httpEquiv="Expires" content="31536000" />
         
-        {/* Explicit Open Graph meta tags for better social media previews */}
+        {/* Enhanced Open Graph meta tags */}
         <meta property="og:image" content="https://karthi-nexgen.tech/android-chrome-512x512.png" />
         <meta property="og:image:secure_url" content="https://karthi-nexgen.tech/android-chrome-512x512.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
-        <meta property="og:image:alt" content="Karthi - NexGen Expert Flutter Developer, Mobile Developer, Freelancer" />
+        <meta property="og:image:alt" content="Karthi - Expert Flutter Developer, Mobile Developer, Freelancer" />
         
         {/* Twitter Card meta tags */}
         <meta name="twitter:image" content="https://karthi-nexgen.tech/android-chrome-512x512.png" />
-        <meta name="twitter:image:alt" content="Karthi - NexGen Expert Flutter Developer, Mobile Developer, Freelancer" />
-        
+        <meta name="twitter:image:alt" content="Karthikeyan S - Expert Flutter Developer, Mobile Developer, Freelancer" />
+
         {/* Additional social media meta tags */}
         <meta property="og:url" content="https://karthi-nexgen.tech" />
         <meta property="og:type" content="website" />
@@ -267,16 +272,16 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://vercel-analytics.vercel.app" />
         <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
         
-        {/* Enhanced favicon and theme */}
+        {/* Enhanced favicon and theme - Dark theme focused */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#8b5cf6" />
-        <meta name="msapplication-TileColor" content="#8b5cf6" />
+        <meta name="theme-color" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#0f172a" />
         <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
-        <meta name="msapplication-navbutton-color" content="#8b5cf6" />
+        <meta name="msapplication-navbutton-color" content="#0f172a" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />

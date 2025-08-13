@@ -20,48 +20,49 @@ interface SkillsSectionProps {
 }
 
 const skillCategories = [
+    {
+    id: "Mobile",
+    label: "Mobile",
+    color: "from-green-500 to-emerald-500",
+    icon: Smartphone,
+    description: "Native-performance cross-platform apps",
+  },
+
   {
     id: "Frontend",
     label: "Frontend",
     color: "from-blue-500 to-cyan-500",
     icon: Code2,
-    description: "Modern web interfaces",
-  },
-  {
-    id: "Mobile",
-    label: "Mobile",
-    color: "from-green-500 to-emerald-500",
-    icon: Smartphone,
-    description: "Cross-platform apps",
+    description: "Modern responsive web interfaces",
   },
   {
     id: "Backend",
     label: "Backend",
     color: "from-purple-500 to-violet-500",
     icon: Server,
-    description: "Server-side solutions",
+    description: "Scalable server-side solutions",
   },
+  // {
+  //   id: "AI/ML",
+  //   label: "AI/ML",
+  //   color: "from-orange-500 to-red-500",
+  //   icon: Zap,
+  //   description: "Artificial Intelligence & Machine Learning",
+  // },
   {
     id: "Database",
     label: "Database",
-    color: "from-orange-500 to-red-500",
-    icon: Database,
-    description: "Data management",
-  },
-  {
-    id: "Cloud",
-    label: "Cloud",
     color: "from-cyan-500 to-blue-500",
-    icon: Cloud,
-    description: "Cloud platforms",
+    icon: Database,
+    description: "Robust data management systems",
   },
-  {
-    id: "DevOps",
-    label: "DevOps",
-    color: "from-red-500 to-pink-500",
-    icon: Settings,
-    description: "Development operations",
-  },
+  // {
+  //   id: "Tools",
+  //   label: "Tools",
+  //   color: "from-red-500 to-pink-500",
+  //   icon: Settings,
+  //   description: "Development tools & platforms",
+  // },
 ]
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
@@ -135,7 +136,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-slate-900 via-purple-800 to-slate-900 dark:from-white dark:via-purple-300 dark:to-white bg-clip-text text-transparent">
-              Skills & Technologies
+              Technologies I Master
             </span>
           </h2>
 
@@ -155,7 +156,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
             {/* Enhanced Tab List */}
             <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent p-2 rounded-2xl border-0">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-4 gap-2 bg-transparent p-2 rounded-2xl border-0">
                 {skillCategories.map((category, index) => (
                   <motion.div
                     key={category.id}
@@ -187,7 +188,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                   className="text-center mb-8"
                 >
                   <div
-                    className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-medium shadow-lg`}
+                    className={`inline-flex items-center gap-2 px-4 py-2 mt-6 bg-gradient-to-r ${category.color} text-white rounded-full text-sm font-medium shadow-lg`}
                   >
                     <category.icon className="w-4 h-4" />
                     {category.description}
@@ -289,12 +290,12 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-20"
         >
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { number: "15+", label: "Technologies", color: "from-blue-500 to-cyan-500", icon: "🚀" },
-              { number: "5+", label: "Mobile Apps", color: "from-green-500 to-emerald-500", icon: "📱" },
-              { number: "20+", label: "Projects", color: "from-purple-500 to-violet-500", icon: "💼" },
-              { number: "3+", label: "Years Exp", color: "from-orange-500 to-red-500", icon: "⭐" },
+              { number: "25+", label: "Client Projects", color: "from-green-500 to-emerald-500", icon: "📱" },
+              { number: "50+", label: "Solutions Built", color: "from-purple-500 to-violet-500", icon: "💼" },
+              { number: "3+", label: "Years Freelancing", color: "from-orange-500 to-red-500", icon: "⭐" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -327,7 +328,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                 </div>
               </motion.div>
             ))}
-          </div> */}
+          </div>
         </motion.div>
       </div>
     </section>

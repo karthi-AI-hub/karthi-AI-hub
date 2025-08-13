@@ -102,7 +102,7 @@ export default function Navbar() {
                 </span>
                 <div className="flex items-center gap-1 text-xs text-slate-400">
                   <Sparkles className="w-3 h-3" />
-                  <span>Expert Flutter & React Developer</span>
+                  <span>Expert Flutter & Full-stack Developer</span>
                 </div>
               </div>
             </motion.div>

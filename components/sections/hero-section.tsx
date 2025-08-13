@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Calendar, Sparkles } from "lucide-react"
+import { ArrowRight, Eye, Github, Linkedin, Mail, MapPin, Calendar, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import TypewriterEffect from "@/components/ui/typewriter-effect"
@@ -43,13 +43,13 @@ export default function HeroSection({ data }: HeroSectionProps) {
       {/* Hidden structured data for SEO */}
       <div className="sr-only">
         <h1 itemProp="name">Karthikeyan S - NexGen Flutter Developer</h1>
-        <span itemProp="jobTitle">Flutter Developer, React Expert, Mobile App Developer</span>
-        <span itemProp="description">Expert freelance developer specializing in Flutter mobile apps, React web development, Node.js backends, Express.js APIs, Next.js, Supabase, Firebase</span>
+        <span itemProp="jobTitle">Freelance Flutter Developer, React Expert, Mobile App Developer</span>
+        <span itemProp="description">Passionate freelance developer creating innovative mobile and web solutions. Specializing in Flutter, React, Node.js, and full-stack development for clients worldwide</span>
         <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
           <span itemProp="addressRegion">Tamil Nadu</span>,
           <span itemProp="addressCountry">India</span>
         </span>
-        <span itemProp="knowsAbout">Flutter Development, React Development, Node.js Development, Mobile App Development, Android Development, Web Development, Full-Stack Development, Express.js, Next.js, Supabase, Firebase</span>
+        <span itemProp="knowsAbout">Flutter Development, React Development, Node.js Development, Python Programming, AI/ML Engineering, Mobile App Development, Web Development, Full-Stack Development, Express.js, Next.js, Supabase, Firebase, Machine Learning, Data Science</span>
       </div>
       <div className="container mx-auto px-4 z-10 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -67,13 +67,13 @@ export default function HeroSection({ data }: HeroSectionProps) {
               transition={{ delay: 0.2 }}
               className="mb-6"
             >
-              <Badge className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-green-500/30 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+                <Badge className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-green-500/30 px-4 py-2 text-sm font-medium backdrop-blur-sm">
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                   className="w-2 h-2 bg-white rounded-full mr-2"
                 />
-                Available for Flutter & React Projects
+                Available for Mobile & Web Development Projects
               </Badge>
             </motion.div>
 
@@ -127,10 +127,10 @@ export default function HeroSection({ data }: HeroSectionProps) {
                 <MapPin className="w-4 h-4" />
                 <span>Tamil Nadu, India</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+              {/* <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
                 <Calendar className="w-4 h-4" />
                 <span>3+ Years Flutter & React</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
                 <Sparkles className="w-4 h-4" />
                 <span>20+ Mobile & Web Apps</span>
@@ -162,7 +162,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
                     variant="outline"
                     className="border-2 border-purple-300 dark:border-purple-600 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm transition-all duration-300"
                   >
-                    <Download className="mr-2 w-5 h-5" />
+                    <Eye className="mr-2 w-5 h-5" />
                     View Resume
                   </Button>
                 </Link>

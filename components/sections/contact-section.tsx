@@ -70,86 +70,99 @@ export default function ContactSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Let's Work Together</h2>
           <div className="w-24 h-1 bg-purple-600 mx-auto mb-8" />
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Ready to bring your project to life? Let's discuss how I can help you build something amazing.
+            Ready to collaborate on your next project? Whether it's a mobile app, web application, or AI/ML solution, let's discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -80, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: -80, scale: 0.9 }}
-            transition={{ 
-              duration: 0.8, 
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
+            initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full">
+              <CardHeader className="pb-6">
                 <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white">Get In Touch</CardTitle>
-                <CardDescription>
+                <CardDescription className="text-base">
                   I'm always open to discussing new opportunities and interesting projects.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
+              <CardContent className="space-y-6 pb-6">
+                <div className="flex items-center space-x-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg flex-shrink-0">
                     <Mail className="w-6 h-6 text-purple-600" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="font-semibold text-slate-900 dark:text-white">Email</h3>
-                    <p className="text-slate-600 dark:text-slate-300">me@karthi-nexgen.tech</p>
+                    <p className="text-slate-600 dark:text-slate-300 break-all">me@karthi-nexgen.tech</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg flex-shrink-0">
                     <Phone className="w-6 h-6 text-purple-600" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="font-semibold text-slate-900 dark:text-white">Phone</h3>
-                    <p className="text-slate-600 dark:text-slate-300">+91 9688976383
-                    </p>
+                    <p className="text-slate-600 dark:text-slate-300">+91 9688976383</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
+                <div className="flex items-center space-x-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg flex-shrink-0">
                     <MapPin className="w-6 h-6 text-purple-600" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3 className="font-semibold text-slate-900 dark:text-white">Location</h3>
                     <p className="text-slate-600 dark:text-slate-300">Tamil Nadu, India</p>
                   </div>
                 </div>
 
                 {/* Social Links */}
-                <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
                   <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Follow Me</h3>
-                  <div className="flex space-x-4">
-                    <Button variant="outline" size="icon">
-                      <Github className="w-5 h-5" />
+                  <div className="flex space-x-3">
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="hover:bg-purple-50 hover:border-purple-300 dark:hover:bg-purple-900/20"
+                      asChild
+                    >
+                      <a 
+                        href="https://github.com/karthi-AI-hub" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit GitHub Profile"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
                     </Button>
-                    <Button variant="outline" size="icon">
-                      <Linkedin className="w-5 h-5" />
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="hover:bg-purple-50 hover:border-purple-300 dark:hover:bg-purple-900/20"
+                      asChild
+                    >
+                      <a 
+                        href="https://linkedin.com/in/k4rthi" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit LinkedIn Profile"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
                     </Button>
-                    {/* <Button variant="outline" size="icon">
-                      <Twitter className="w-5 h-5" />
-                    </Button> */}
                   </div>
                 </div>
 
                 {/* Availability Status */}
                 <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0" />
                     <span className="font-semibold text-green-800 dark:text-green-300">Available for new projects</span>
                   </div>
-                  <p className="text-sm text-green-600 dark:text-green-400 mt-1">
+                  <p className="text-sm text-green-600 dark:text-green-400">
                     Currently accepting freelance work and consulting opportunities
                   </p>
                 </div>
@@ -163,12 +176,12 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Card>
-              <CardHeader>
+            <Card className="h-full">
+              <CardHeader className="pb-6">
                 <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white">Send Message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you within 24 hours.</CardDescription>
+                <CardDescription className="text-base">Fill out the form below and I'll get back to you within 24 hours.</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pb-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input

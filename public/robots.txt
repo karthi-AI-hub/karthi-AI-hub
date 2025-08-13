@@ -1,5 +1,5 @@
-# Robots.txt for Karthi-NexGen - Flutter Developer, React Expert, Mobile App Developer
-# https://karthi-nexgen.tech
+# Robots.txt for Karthikeyan S - AI/ML Engineer & Full-Stack Developer
+# Portfolio: https://karthi-nexgen.tech
 
 User-agent: *
 Allow: /

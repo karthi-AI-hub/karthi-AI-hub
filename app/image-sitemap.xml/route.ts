@@ -16,19 +16,19 @@ export async function GET() {
   images.push(
     {
       url: `${baseUrl}/android-chrome-512x512.png`,
-      caption: "Karthi - Expert Flutter Developer & Mobile App Specialist",
-      title: "Karthi NexGen Profile Photo"
+      caption: "Karthikeyan S - AI/ML Engineer & Full-Stack Developer Profile",
+      title: "Karthikeyan S NexGen Developer"
     },
-    {
-      url: `${baseUrl}/me1.jpg`,
-      caption: "Karthi - Professional Mobile Developer & React Expert",
-      title: "Karthi NexGen Professional Photo"
-    },
-    {
-      url: `${baseUrl}/me2.jpg`,
-      caption: "Karthi NexGen Logo - Flutter Developer Brand",
-      title: "Karthi NexGen Logo"
-    }
+    // {
+    //   url: `${baseUrl}/me1.jpg`,
+    //   caption: "Karthikeyan S - Professional Mobile Developer & React Expert",
+    //   title: "Karthikeyan S Professional Photo"
+    // },
+    // {
+    //   url: `${baseUrl}/me2.jpg`,
+    //   caption: "Karthikeyan S Portfolio - Flutter, React, Python Developer",
+    //   title: "Karthikeyan S Portfolio Image"
+    // }
   )
 
   // Project images

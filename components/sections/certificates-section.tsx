@@ -33,8 +33,8 @@ export default function CertificatesSection({ certificates }: CertificatesSectio
   const filteredCertificates = certificates.filter((cert) => selectedType === "All" || cert.type === selectedType)
 
   // Debug: Log certificates data
-  console.log('Certificates data:', certificates);
-  console.log('Filtered certificates:', filteredCertificates);
+  // console.log('Certificates data:', certificates);
+  // console.log('Filtered certificates:', filteredCertificates);
 
   // Convert GitHub blob URLs to raw URLs for images
   const convertToRawUrl = (url: string) => {

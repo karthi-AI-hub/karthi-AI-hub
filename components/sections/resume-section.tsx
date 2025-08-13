@@ -99,7 +99,7 @@ export default function ResumeSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-8 rounded-full" />
 
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Get a comprehensive overview of my professional experience, skills, and achievements.
+            Comprehensive overview of my academic background in AI & Data Science, technical skills, and professional development experience.
           </p>
         </motion.div>
 

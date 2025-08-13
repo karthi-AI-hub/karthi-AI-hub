@@ -25,32 +25,32 @@ const serviceIcons = {
   "Mobile App Development": {
     icon: Smartphone,
     gradient: "from-green-500 to-emerald-500",
-    features: ["Cross-platform", "Native performance", "App Store ready"],
+    features: ["Cross-platform", "Native Performance" , "App/Play Store ready"],
   },
   "Full-Stack Web Development": {
     icon: Globe,
     gradient: "from-blue-500 to-cyan-500",
-    features: ["Responsive design", "SEO optimized", "Fast loading"],
+    features: ["React & Next.js", "Node.js backends", "Responsive design"],
   },
   "API Development & Integration": {
     icon: Server,
     gradient: "from-purple-500 to-violet-500",
-    features: ["RESTful APIs", "GraphQL", "Documentation"],
+    features: ["RESTful APIs", "Database design", "Third-party integrations"],
   },
-  "Cloud Solutions & DevOps": {
+  "AI/ML Solutions": {
     icon: Cloud,
     gradient: "from-cyan-500 to-blue-500",
-    features: ["AWS/GCP", "CI/CD pipelines", "Scalable infrastructure"],
+    features: ["Machine Learning", "Data Analysis", "Python development"],
   },
   "UI/UX Design & Prototyping": {
     icon: Palette,
     gradient: "from-pink-500 to-rose-500",
-    features: ["User-centered design", "Wireframing", "Design systems"],
+    features: ["Modern UI design", "User experience", "Figma prototypes"],
   },
   "Technical Consulting": {
     icon: Users,
     gradient: "from-orange-500 to-red-500",
-    features: ["Architecture review", "Code audits", "Performance optimization"],
+    features: ["Code architecture", "Technology selection", "Performance optimization"],
   },
 }
 
@@ -124,7 +124,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-8 rounded-full" />
 
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Comprehensive development services to bring your ideas to life with modern technologies and best practices.
+            Professional development services specializing in modern web and mobile applications, AI/ML solutions, and comprehensive technical consulting.
           </p>
         </motion.div>
 

@@ -15,8 +15,8 @@ const highlights = [
   },
   {
     icon: Smartphone,
-    title: "Mobile Development",
-    description: "Specialized in Flutter and React Native for cross-platform mobile applications",
+    title: "Mobile App Expertise",
+    description: "Specialized in Flutter and React Native for cross-platform mobile applications with native performance",
     gradient: "from-green-500 to-emerald-500",
   },
   {
@@ -27,14 +27,14 @@ const highlights = [
   },
   {
     icon: Users,
-    title: "Client-Focused",
-    description: "Delivered successful projects across Healthcare, Enterprise, and EdTech sectors",
+    title: "Client Collaboration",
+    description: "Strong communication skills and client-focused approach, delivering projects that exceed expectations while maintaining long-term relationships",
     gradient: "from-pink-500 to-rose-500",
   },
   {
     icon: Award,
-    title: "Proven Track Record",
-    description: "Published apps on Play Store and deployed enterprise solutions for major clients",
+    title: "Proven Results",
+    description: "Successfully delivered 20+ freelance projects including mobile apps, web platforms, and custom solutions for diverse industries",
     gradient: "from-orange-500 to-amber-500",
   },
   {
@@ -110,8 +110,8 @@ export default function AboutSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-8 rounded-full" />
 
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            I'm a passionate full-stack developer with{" "}
-            <span className="font-semibold text-purple-600 dark:text-purple-400">3+ years of experience</span> building
+            I'm a passionate freelance developer with{" "}
+            <span className="font-semibold text-purple-600 dark:text-purple-400">strong hands on experience</span> building
             scalable web and mobile applications. My journey spans from enterprise solutions at SAIL to innovative
             healthcare platforms, always focusing on delivering exceptional user experiences and robust technical
             solutions.
@@ -169,7 +169,7 @@ export default function AboutSection() {
                 My Journey
               </span>
             </h3>
-            <p className="text-slate-600 dark:text-slate-300 text-lg">From student to professional developer</p>
+            <p className="text-slate-600 dark:text-slate-300 text-lg">From student to freelance professional</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -182,20 +182,20 @@ export default function AboutSection() {
                 {[
                   {
                     year: "2024 - Present",
-                    title: "Freelance Developer",
-                    description: "Building custom solutions for clients across various industries",
+                    title: "Independent Freelance Developer",
+                    description: "Building custom mobile and web solutions for clients globally, specializing in Flutter, React, and full-stack development",
                     side: "right",
                   },
                   {
-                    year: "2025 - Present",
-                    title: "Flutter Developer at Pep Softwares",
-                    description: "Led mobile app development team and delivered multiple production apps",
+                    year: "2022 - Present",
+                    title: "AI/DS Engineering Student",
+                    description: "Pursuing B.Tech in Artificial Intelligence & Data Science with 8.5+ CGPA, focusing on software engineering and modern development practices",
                     side: "left",
                   },
                   {
-                    year: "2022 - 2026",
-                    title: "Artificial Intelligence & Data Science Student",
-                    description: "B.Tech with 8.5 CGPA, specialized in software engineering",
+                    year: "2021 - 2024",
+                    title: "Self-Taught Developer Journey",
+                    description: "Mastered Flutter, React, Node.js, and cloud technologies through hands-on projects and continuous learning",
                     side: "right",
                   },
                 ].map((item, index) => (
@@ -239,9 +239,9 @@ export default function AboutSection() {
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-purple-600/10 backdrop-blur-xl border border-purple-500/20 rounded-3xl p-8 max-w-2xl mx-auto">
-            <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Ready to work together?</h4>
+            <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Ready to start your project?</h4>
             <p className="text-slate-600 dark:text-slate-300 mb-6">
-              Let's discuss your next project and bring your ideas to life.
+              Let's collaborate and turn your ideas into reality with cutting-edge technology.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button

@@ -1,7 +1,7 @@
 {
-  "name": "Karthi NexGen - Expert Flutter Developer & Mobile App Specialist",
-  "short_name": "Karthi NexGen",
-  "description": "Expert Flutter developer, mobile developer, React specialist, and professional freelancer delivering premium mobile and web solutions.",
+  "name": "Karthikeyan S - AI/ML Engineer & Full-Stack Developer Portfolio",
+  "short_name": "Karthikeyan S",
+  "description": "AI/ML Engineering Student & Full-Stack Developer specializing in Flutter, React, Python, and modern web technologies. B.Tech in AI & Data Science with 8.5+ CGPA.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,11 +14,11 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#8b5cf6",
-  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
   "orientation": "portrait-primary",
-  "categories": ["productivity", "developer", "portfolio"]
+  "categories": ["productivity", "developer", "portfolio", "ai", "ml", "engineering"]
 }
